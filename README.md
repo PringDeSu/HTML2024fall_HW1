@@ -5,9 +5,9 @@
 
 ## Main script (PLA algorithm)
 ```
-g++ -std=c++17 main.cpp
+g++ -std=c++17 ./main.cpp -D PRINT -O3
 ./a.out iteration_count_1.txt length_1.txt
-g++ -std=c++17 -D PLA_MODIFIED main.cpp
+g++ -std=c++17 -D PLA_MODIFIED ./main.cpp -D PRINT -O3
 ./a.out iteration_count_2.txt length_2.txt
 ```
 
@@ -15,8 +15,7 @@ g++ -std=c++17 -D PLA_MODIFIED main.cpp
 ```
 python3 -m venv ./python
 ./python/bin/pip install matplotlib PyQt6 PySide2
-./python/bin/activate
-python ./python/plot_10.py
-python ./python/plot_11.py
-python ./python/plot_12.py
+./python/bin/python ./python/plot_10.py < ./iteration_count_1.txt
+./python/bin/python ./python/plot_11.py < ./length_1.txt
+./python/bin/python ./python/plot_12.py < ./iteration_count_2.txt
 ```
